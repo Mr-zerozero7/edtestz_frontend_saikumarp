@@ -59,7 +59,8 @@
 .heading-container{
     position: absolute;
     bottom: 0;
-    left: 20%;
+    top: 100;
+    left: 60;
     transform: translateX(-50%);
     text-align: center;
     z-index: 10;
@@ -75,7 +76,7 @@
 
 @keyframes slideInOut{
     10%{
-        transform: translateY(70%);
+        transform: translateY(80%);
         opacity: 0;
     }
     50%{
