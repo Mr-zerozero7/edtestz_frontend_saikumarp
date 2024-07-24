@@ -17,12 +17,6 @@ const AppointmentsHistory = () => {
         errorMsg: ''
     })
 
-    // const handleListBtn = () => {
-    //     apiResponse.data.map(eachCard => (
-    //         console.log(eachCard)
-    //     ))
-    // }
-
     useEffect(() => {
       const getAppointments = async () => {
         setApiResponse({
@@ -98,7 +92,5 @@ const AppointmentsHistory = () => {
     </div>
   )
 }
-
-/* <button type='button' onClick={handleListBtn}>Get List</button> */
 
 export default AppointmentsHistory
