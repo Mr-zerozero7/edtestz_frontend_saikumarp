@@ -1,0 +1,208 @@
+
+.home-page-main-container{
+    background-color: #020B19;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ball{
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    position: absolute;
+    animation: bounce 15s infinite ease-in-out;
+}
+.ball:nth-child(2){
+    background-color: greenyellow;
+    animation-delay: 20s;
+}
+
+.ball:nth-child(3){
+    background-color: aqua;
+    animation-delay: 20s;
+}
+
+
+@keyframes bounce{
+    0%, 100%{
+        transform: translateY(400px);
+        transform: translateX(-400px);
+    }
+    50%{
+        transform: translateY(600px);
+        transform: translateY(700px);
+
+    }
+}
+
+.spring-balls-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.home-page-image-container{
+    position: relative;
+    z-index: 2;
+}
+.main-image{
+    width: 600px;
+    height: auto;
+    
+}
+.heading-container{
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+    padding: 20px;
+    animation: slideInOut 10s infinite;
+}
+.main-heading{
+    text-align: center;
+    color: white;
+    font-size: 120px;
+    
+}
+
+@keyframes slideInOut{
+    10%{
+        transform: translateY(70%);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+    90%{
+        transform: translateY(0%);
+        opacity: 0;
+    }
+}
+
+.tag-note-and-button-container{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.tag-note{
+    font-weight: 700;
+}
+.started-btn{
+    padding: 15px;
+    border-radius: 25px;
+    background-color: orange;
+    color: black;
+    font-weight: 600;
+    width: 140px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.theme-note{
+    font-family: 'Snell Roundhand', cursive;
+    color: #8CD437;
+    text-align: center;
+    font-size: 30px;
+}
+
+.consulting-business-containers{
+    display: flex;
+}
+.consulting-container,.business-container{
+    padding: 15px;
+    height: 550px;
+    width: 50%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.consulting-container{
+    background-image: linear-gradient(to top, #FCBC9D, #039DE2);
+}
+.business-container{
+    background-color: #FFC30C;
+}
+.consult-note,.business-note{
+    width: 300px;
+    font-weight: 400;
+    font-size: 20px;
+}
+.consult-note{
+    margin-left: 90px;
+}
+.talk-to-us-btn{
+    background-color: transparent;
+    padding: 10px;
+    color: black;
+    border: solid 2px black;
+    border-radius: 25px;
+    width: 140px;
+    font-size: 18px;
+    margin-top: 20px;
+    &:hover{
+        background-color: black;
+        color: white;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .main-image{
+        width: 400px;
+        height: auto;
+    }
+    .heading-container{
+        top: 150;
+        left: 10%;
+    }
+    .main-heading{
+        font-size: 60px;
+    }
+    @keyframes slideInOut{
+        10%{
+            transform: translateY(70%);
+            opacity: 0;
+        }
+        50%{
+            transform: translateY(-150%);
+            opacity: 1;
+        }
+        90%{
+            transform: translateY(0%);
+            opacity: 0;
+        }
+    }
+    .tag-note-and-button-container{
+        text-align: center;
+    }
+    .consulting-business-containers{
+        margin-bottom: 60px;
+        & div{
+            height: 380px;
+        }
+        & div h1{
+            font-size: 18px;
+        }
+        & div p{
+            font-size: 16px;
+            width: 90%;
+            overflow: hidden;
+        }
+    }
+    .consult-note{
+        margin-left: 20px;
+    }
+}

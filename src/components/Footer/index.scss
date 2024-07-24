@@ -1,0 +1,111 @@
+.footer-main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.empty-container{
+    // height: 300px;
+    padding-top: 200px;
+}
+.primary-container{
+    background-image: linear-gradient(to right, #FFC20C,#FF8E0C);
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0%;
+    left: 20%;
+    z-index: 5;
+    & .form-container .inputs-container{
+        flex-direction: row;
+        @media screen and (max-width:768px) {
+            flex-direction: column;
+        }
+    }
+    @media screen and (max-width:768px) {
+        width: 80%;
+        left: 13%;
+        top: -6%;
+    }
+}
+.inputs-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.user-request-input{
+    padding: 14px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    width: 260px;
+}
+.form-started-btn{
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    width: 120px;
+    background-color: #000000;
+    color: white;
+    margin-top: 10px;
+}
+.secondary-container{
+    background-color: #01040A;
+    color: white;
+    width: 100%;
+    padding-top: 120px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.footer-brand-logo-name-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.f-logo-name-container{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-logo{
+    animation: footer-logo-spin infinite 2s linear;
+}
+
+@keyframes footer-logo-spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.footer-menu-container{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    font-weight: 600;
+    font-size: 18px;
+    @media screen and (max-width:768px) {
+        // flex-direction: column;
+        flex-wrap: wrap;
+
+    }
+}
+.social-media-container{
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    margin: 10px 0px;
+}
+.social-icon{
+    width: 30px;
+    height: 30px;
+}
+.copy-right-note{
+    margin-bottom: 10px;
+}

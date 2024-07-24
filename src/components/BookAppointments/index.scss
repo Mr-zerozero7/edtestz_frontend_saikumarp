@@ -1,0 +1,222 @@
+.book-appointments-main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.booking-side-wall-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wall-heading{
+    color: #8CD437;
+    font-family: sans-serif;
+}
+.wall-note{
+    font-weight: 600;
+    font-size: 20px;
+    width: 400px;
+    text-align: center;
+}
+.booking-section-container{
+    height: 660px;
+    padding: 20px 10px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    &::-webkit-scrollbar{
+        width: 15px;
+    }
+    &::-webkit-scrollbar-track{
+        background-color:  #EAFFEA;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #09A8CD;
+        border-radius: 10px;
+        border: solid 2px #f0f0f0;
+    }
+}
+.booking-brand-logo{
+    width: 120px;
+    height: 35px;
+    margin-top: 10px;
+}
+hr{
+    border: solid 1px #e9e7e7;
+    width: 100%;
+}
+.status-head,.time-head{
+    text-align: center;
+}
+.status-head{
+    color: #737379;
+}
+.instruction-container{
+    width: 380px;
+    padding-left: 15px;
+}
+.instruction-container p{
+    width: 350px;
+}
+.instruction-container p:nth-child(-n+2){
+    font-weight: 600;
+    color: #737379;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+.meet-icon{
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.calendar-container{
+    text-align: center;
+}
+.calendar-view-container{
+    width: 400px;
+    
+}
+.calendar-head{
+    color: #FFB514;
+}
+.react-calendar button{
+    border: none;
+    // padding: 8px;
+    // margin: 5px;
+    background-color: transparent;
+    font-size: 20px;
+    
+    &:hover{
+        background-color: #D9E9FF;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+.react-calendar__navigation{
+    margin-bottom: 15px;
+}
+.react-calendar__tile{
+    border: none;
+    background-color: #EEF5FF;
+    font-weight: 600;
+    color: blue;
+    height: 55px;
+    border-radius: 50%;
+    &:disabled{
+        color: lightslategray;
+        background-color: transparent;
+        font-weight: 100;
+    }
+    &:hover{
+        background-color: #D9E9FF;
+    }
+}
+.react-calendar__month-view__weekdays{
+    text-decoration: none;
+    color: #8CD437;
+    font-weight: 600;
+}
+.react-calendar__month-view__days__day{
+    background-color: #EEF5FF;
+    
+}
+abbr[title]{
+    text-decoration: none;
+}
+
+.timer-input{
+    padding: 6px;
+    border-radius: 10px;
+    border: solid 2px #8CD437;
+    background-color: #EAFFEA;
+    font-weight: 600;
+    margin: 15px 0px;
+}
+
+
+.text-note{
+    margin: 10px 0px;
+}
+
+.description-and-favourite-container{
+    display: flex;
+    flex-direction: column;
+}
+.favourite-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.favourite-input-container input:first-child{
+    margin-left: 20px;
+}
+
+.book-btn{
+    padding: 10px;
+    border: none;
+    background-color: #09A8CD;
+    border-radius: 10px;
+    width: 90px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    &:hover{
+        background-color: #FFB514;
+    }
+}
+
+@media screen and (max-width: 769px){
+    .book-appointments-main-container{
+        flex-direction: column;
+    }
+    .booking-side-wall-container{
+        width: 50%;
+        text-align: center;
+    }
+    .wall-image{
+        width: 300px;
+        height: auto;
+    }
+    .text-note{
+        width: 300px;
+        align-self: center;
+    }
+    .book-appointments-main-container{
+        margin-bottom: 60px;
+    }
+    .description-and-favourite-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+    .booking-side-wall-container{
+        width: 50%;
+        text-align: center;
+    }
+    .wall-image{
+        width: 300px;
+        height: auto;
+    }
+    .text-note{
+        width: 300px;
+        align-self: center;
+    }
+    .book-appointments-main-container{
+        margin-bottom: 60px;
+    }
+    .description-and-favourite-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

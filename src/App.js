@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter,Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './components/Home';
+import Footer from './components/Footer';
+import About from './components/About';
+import ContactUs from './components/ContactUs';
+import BookAppointments from './components/BookAppointments';
+import AppointmentsHistory from './components/AppointmentHistory';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
+import ProtectedRoute from './components/ProtectedRoute';
+import { AuthProvider } from './components/AuthContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+      <AuthProvider>
+        <Header/>
+        <Routes>
+          <Route exact path='/signup' element={<SignUp/>}/>
+          <Route exact path='/login' element={<Login/>}/>
+          <Route exact element={<ProtectedRoute/>}>
+            <Route exact path='/' element={<Home/>} />
+            <Route exact path='/about' element={<About/>} />
+            <Route exact path='/contactus' element={<ContactUs/>} />
+            <Route exact path='/appointments/create' element={<BookAppointments/>} />
+            <Route exact path='/appointments/' element={<AppointmentsHistory/>} />
+          </Route>
+        </Routes>
+        <Footer/>
+      </AuthProvider>
+    </BrowserRouter>
+    
+    </>
   );
 }
 

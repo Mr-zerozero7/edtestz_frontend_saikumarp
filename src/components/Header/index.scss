@@ -1,0 +1,141 @@
+.navbar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #020B19;
+    color: whitesmoke;
+    height: 75px;
+}
+.brand-logo{
+    cursor: pointer;
+}
+.menu-btn{
+    display: none;
+}
+.nav-menu-items-container{
+    display: flex;
+    width: 40%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 600;
+    @media screen and (max-width:768px) {
+        // display: none;
+        order: 1;
+        flex-direction: column;
+        position: absolute;
+        top: 10%;
+        right: 0px;
+        z-index: 15;
+        border-radius: 0px 0px 20px 20px;
+        background-color: rgba( 255, 255, 255, 0.25 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    }
+}
+.menu-link{
+    text-decoration: none;
+    color: white;
+}
+.menu-item{
+    cursor: pointer;
+}
+.nav-menu-items-container .menu-link .menu-item:nth-child(-n+6):hover{
+    background-color: #09A6CC;
+    border-radius: 8px;
+    padding: 4px 5px;
+}
+.book:hover{
+    background-color: #FEB711 !important;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px #bfbfbf;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 0px 0px 15px 15px;
+    z-index: 12;
+}
+.dropdown-content a{
+    display: block;
+    color: black;
+    padding: 16px;
+}
+.dropdown-content a:hover{
+    background-color: red;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+.dropdown:hover .drop-btn{
+    background-color: #FEB711;
+    color: black;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 3px;
+}
+.dropdown-content p:hover{
+    background-color: #0AAACB;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 3px 8px;
+}
+
+.logout-btn{
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #FEB711;
+    color: #020B19;
+    border-radius: 15px;
+    font-weight: 600;
+    &:hover{
+        color: #0AAACB;
+        border: solid 1px #78C042;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .menu-btn{
+        display: block;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+    }
+    .menu-btn-icon{
+        font-size: 20px;
+    }
+    .menu-link{
+        color: #020B19;
+    }
+    .short-menu{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav-menu-items-container{
+        width: 60%;
+        justify-content: space-evenly;
+    }
+    .menu-link{
+        margin: 0px 5px;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .nav-menu-items-container{
+        width: 60%;
+    }
+}
