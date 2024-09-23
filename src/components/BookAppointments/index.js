@@ -31,6 +31,7 @@ const BookAppointments = () => {
     useEffect(() => {
         if(submit){
             const postData = async () =>{
+                // const appointmentUrl = 'http://localhost:4000/api/appointments/create';
                 const appointmentUrl = 'https://edtestz-appointment-backend-saikumarp-1.onrender.com/api/appointments/create';
                 const options = {
                     method: 'POST',

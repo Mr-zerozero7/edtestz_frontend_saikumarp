@@ -11,38 +11,39 @@ const Login = () => {
     const [loginFrom, setLoginForm] = useState({
         email:'', password:''
     })
+    const [errorMsg, setErrorMsg] = useState('')
+
     const {isAuthenticated ,login} = useAuth()
 
     const navigate = useNavigate()
 
     const handleInputs = (e) => {
         setLoginForm(prevState => ({...prevState, [e.target.name]: e.target.value}))
-        // console.log('event triggered')
     }
 
     const handleLoginForm = async(event) => {
         event.preventDefault()
         try {
-            const loginUrl = 'https://edtestz-appointment-backend-saikumarp-1.onrender.com/api/users/login'
-            const options = {
-                method: 'POST',
-                headers:{
+        // const loginUrl = 'http://localhost:4000/api/users/login'
+        const loginUrl = 'https://edtestz-appointment-backend-saikumarp-1.onrender.com/api/users/login'
+        const options = {
+            method: 'POST',
+            headers:{
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(loginFrom)
             }
             const response = await fetch(loginUrl, options)
+            const data = await response.json()
             if(response.ok){
-                const data = await response.json()
-                // Cookies.set('jwt_token', data.token)
-                // console.log(data.token)
-                login(data.token)
+                login(data)
                 navigate('/')
+                console.log(data)
             }else{
-                console.log('post error')
+                setErrorMsg(data.errorMsg)
             }
         } catch (error) {
-            console.log(error.message)
+            setErrorMsg(error.message)
         }
     }
 
@@ -64,6 +65,7 @@ const Login = () => {
             <input type='password' onChange={handleInputs} value={loginFrom.password} placeholder='Create Password' name='password'/>
         </div>
         <button type='submit' className='auth-btn'>Login</button>
+        {errorMsg !== '' && <p className='error-msg'>{errorMsg}</p>}
         <Link to='/signup' className='link'>
             <p>Don't have an account? <span>SignUp</span></p>
         </Link>

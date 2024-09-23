@@ -5,17 +5,20 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(!!Cookies.get('jwt_token'));
-    
+    const [accountUser, setAccountUser] = useState('')
 
-    const login = (token) => {
-        Cookies.set('jwt_token', token)
+    const login = (data) => {
+        Cookies.set('jwt_token', data.token)
         setIsAuthenticated(true)
+        setAccountUser(data.username)
     }
     const logout = () => {
         Cookies.remove('jwt_token');
         setIsAuthenticated(false);
 
     }
+
+
     
     useEffect(() => {
         const token = Cookies.get('jwt_token')
@@ -24,7 +27,7 @@ export const AuthProvider = ({children}) => {
     },[]);
 
     return (
-        <AuthContext.Provider value={{isAuthenticated, login, logout}}>
+        <AuthContext.Provider value={{isAuthenticated, login, logout,accountUser}}>
             {children}
         </AuthContext.Provider>
     );

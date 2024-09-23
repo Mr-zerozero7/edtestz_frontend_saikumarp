@@ -6,8 +6,8 @@ import { useAuth } from '../AuthContext'
 import { IoMdMenu } from "react-icons/io";
 
 const Header = () => {
-  const {isAuthenticated, logout} = useAuth();
-  const [isActiveMenu, setIsActiveMenu] = useState(false)
+  const {isAuthenticated,accountUser, logout} = useAuth();
+  const [isActiveMenu, setIsActiveMenu] = useState(false);
   
   const navigate = useNavigate();
   
@@ -60,6 +60,7 @@ const Header = () => {
           </div>
         )
       }
+      <h4 className='user-name'>{accountUser}</h4>
       {
         isAuthenticated && (
           <Link>
