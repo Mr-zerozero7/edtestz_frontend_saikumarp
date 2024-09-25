@@ -24,8 +24,8 @@ const AppointmentsHistory = () => {
             data: null,
             errorMsg: ''
         })
-        const appointementsUrl = 'http://localhost:4000/api/appointments/'
-        // const appointementsUrl = 'https://edtestz-appointment-backend-saikumarp-1.onrender.com/api/appointments/'
+        // const appointementsUrl = 'http://localhost:4000/api/appointments/'
+        const appointementsUrl = 'https://edtestz-appointment-backend-saikumarp-1.onrender.com/api/appointments/'
         const options={
             method: 'GET',
             headers:{
