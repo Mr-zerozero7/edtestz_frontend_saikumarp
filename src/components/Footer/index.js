@@ -5,7 +5,10 @@ const footerMenuItems=[
     'About Us', 'Careers', 'Contact Us', 'Sitemap', 'Terms & Conditions', 'Privacy'
 ]
 const socialMIcons = [
-    'facebook.png','instagram.png','linkedin.png','twitter.png',
+    {src:'facebook.png', url: 'https://www.facebook.com/' },
+    {src:'instagram.png', url: 'https://www.instagram.com/' },
+    {src:'linkedin.png', url: 'https://www.linkedin.com/' },
+    {src:'twitter.png', url: 'https://www.twitter.com/' },
 ]
 
 const Footer = () => {
@@ -37,13 +40,15 @@ const Footer = () => {
             <div className='footer-menu-container'>
                 {
                     footerMenuItems.map(fitem => (
-                        <p key={fitem}>{fitem}</p>
+                        <p className='footer-menu-item' key={fitem}>{fitem}</p>
                     ))
                 }
             </div>
             <div className='social-media-container'>
-                {socialMIcons.map(icon => (
-                    <img key={icon} className='social-icon' src={`icons/social/${icon}`} alt='social icon' />
+                {socialMIcons.map((icon, index) => (
+                    <a key={index} href={icon.url} target='_blank' rel="noreferrer noopener">
+                    <img className='social-icon' src={`icons/social/${icon.src}`} alt={`${icon.src} icon`} />
+                    </a>
                 ))}
             </div>
             <p className='copy-right-note'>&copy; 2024 Thought Frameworks Reserve All Rights</p>

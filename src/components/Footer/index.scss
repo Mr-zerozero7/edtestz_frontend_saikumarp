@@ -50,6 +50,7 @@
     background-color: #000000;
     color: white;
     margin-top: 10px;
+    cursor: pointer;
 }
 .secondary-container{
     background-color: #01040A;
@@ -96,6 +97,7 @@
 
     }
 }
+
 .social-media-container{
     display: flex;
     justify-content: space-around;
@@ -108,4 +110,8 @@
 }
 .copy-right-note{
     margin-bottom: 10px;
+}
+
+.footer-menu-item,.social-icon{
+    cursor: pointer;
 }
