@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter,Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import Footer from './components/Footer';
@@ -17,7 +17,7 @@ import { AuthProvider } from './components/AuthContext';
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <HashRouter>
       <AuthProvider>
         <Header/>
         <Routes>
@@ -34,7 +34,7 @@ function App() {
         </Routes>
         <Footer/>
       </AuthProvider>
-    </BrowserRouter>
+    </HashRouter>
     
     </>
   );
