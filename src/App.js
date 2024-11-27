@@ -10,6 +10,7 @@ import BookAppointments from './components/BookAppointments';
 import AppointmentsHistory from './components/AppointmentHistory';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
+import NotFound from './components/NotFound';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './components/AuthContext';
 
@@ -29,6 +30,7 @@ function App() {
             <Route exact path='/appointments/create' element={<BookAppointments/>} />
             <Route exact path='/appointments/' element={<AppointmentsHistory/>} />
           </Route>
+          <Route exact path='*' element={<NotFound/>}/>
         </Routes>
         <Footer/>
       </AuthProvider>

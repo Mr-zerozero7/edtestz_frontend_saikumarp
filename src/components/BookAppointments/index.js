@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Calendar from 'react-calendar'
+import {format} from 'date-fns'
 import Cookies from 'js-cookie'
 import { LuClock } from "react-icons/lu";
 import { IoVideocamOutline } from "react-icons/io5";
@@ -18,8 +19,9 @@ const BookAppointments = () => {
     }
 
     const handleChangeDate = (date) =>{
+        const formattedDate = format(date, "yyyy-MM-dd'T'HH:mm:ssxxx");
         setAppointment(prevState => ({...prevState,
-            date:date
+            date:formattedDate
         }))
     }
     const handleAppointment= (event) => {
@@ -55,7 +57,7 @@ const BookAppointments = () => {
                 }
             };
             postData();
-            setAppointment({date:'',time:'',description:'', favourite: false})
+            // setAppointment({date:'',time:'',description:'', favourite: false})
         }
     }, [submit, appointment,navigate])
     
