@@ -40,7 +40,6 @@ const AppointmentsHistory = () => {
                     status: apiConstants.success,
                     data: responseData,
                 }))
-                console.log(responseData)
             }
         } catch (error) {
             console.log('List Data fetching Error')
@@ -58,11 +57,17 @@ const AppointmentsHistory = () => {
     )
 
     const renderSuccessView =() =>{
-        return(
-        apiResponse.data.map(eachCard => (
-            <BookingCards cardDetails={eachCard} key={eachCard.id} />
-        ))
-    )
+        if(apiResponse.data.length === 0){
+            return(
+                <h1>Empty History</h1>
+            )
+        }else{
+            return(
+                apiResponse.data.map(eachCard => (
+                    <BookingCards cardDetails={eachCard} key={eachCard.id} />
+                ))
+            )   
+        }
     }
 
     const renderFailureView = () =>(
